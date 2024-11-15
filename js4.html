@@ -5,37 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calcola il dislivello</title>
 <style>
-
-    #container1{
-        padding:20px;
-        border:1px solid black;
+    #container1 {
+        padding: 20px;
+        border: 1px solid black;
         background-image: url(una\ montagna.png);
         background-size: cover;
-        color:white;
-        margin:10px;
+        color: white;
+        margin: 10px;
         height: 500px;
-    
         width: 500px;
     }
-    
-</style>
 
+    /* New button style */
+    .styled-button {
+        background-color: #4CAF50; /* Green background */
+        border: none; /* Remove borders */
+        color: white; /* White text */
+        padding: 15px 32px; /* Some padding */
+        text-align: center; /* Center the text */
+        text-decoration: none; /* Remove underline */
+        display: inline-block; /* Make the button inline */
+        font-size: 16px; /* Increase font size */
+        margin: 4px 2px; /* Some margin */
+        cursor: pointer; /* Pointer cursor on hover */
+        border-radius: 12px; /* Rounded corners */
+    }
+
+    .styled-button:hover {
+        background-color: #45a049; /* Darker green on hover */
+    }
+</style>
 </head>
 <body>
 
    <div id="container1">
-Inserisci i dati nella tabella e premi il tasto "calcola dislivello"
-    <p><label for="partenza">Partenza (m)</label></p>
-    <input id="partenza" type="text">
-    <p><label for="merenda">Pausa trekking (m)</label></p>
-    <input id="merenda" type="text">
-    <p><label for="arrivo">Arrivo (m)</label></p>
-    <input id="arrivo" type="text">
-    <p>  </p>
-    <button onclick="calcola()"> Calcola dislivello</button>
-    <p id="out1"></p>
+        Inserisci i dati nella tabella e premi il tasto "calcola dislivello"
+        <p><label for="partenza">Partenza (m)</label></p>
+        <input id="partenza" type="text">
+        <p><label for="merenda">Pausa trekking (m)</label></p>
+        <input id="merenda" type="text">
+        <p><label for="arrivo">Arrivo (m)</label></p>
+        <input id="arrivo" type="text">
+        <p></p>
+        <button class="styled-button" onclick="calcola()">Calcola dislivello</button>
+        <p id="out1"></p>
    </div>
-
 
    <script>
     function calcola(){
