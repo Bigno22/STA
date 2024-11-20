@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcola il dislivello</title>
+<style>
+    #container1 {
+        padding: 20px;
+        border: 1px solid black;
+        background-image: url(una\ montagna.png);
+        background-size: cover;
+        color: white;
+        margin: 10px;
+        height: 500px;
+        width: 500px;
+    }
+
+    .styled-button {
+        background-color: #4CAF50; 
+        border: none; 
+        color: white; 
+        padding: 15px 32px;
+        text-align: center; 
+        text-decoration: none; 
+        display: inline-block; 
+        font-size: 16px; 
+        margin: 4px 2px; 
+        cursor: pointer; 
+        border-radius: 12px; 
+    }
+
+    .styled-button:hover {
+        background-color: #45a049; 
+    }
+
+    #container2 {
+        padding: 20px;
+        border: 1px solid black;
+        color: white;
+        margin: 10px;
+        height: 500px;
+        width: 500px;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+</style>
+</head>
+<body>
+
+   <div id="container1">
+        Inserisci i dati nella tabella e premi il tasto "calcola dislivello"
+        <p><label for="partenza">Partenza (m)</label></p>
+        <input id="partenza" type="text">
+        <p><label for="merenda">Pausa trekking (m)</label></p>
+        <input id="merenda" type="text">
+        <p><label for="arrivo">Arrivo (m)</label></p>
+        <input id="arrivo" type="text">
+        <p></p>
+        <button class="styled-button" onclick="calcola()">Calcola dislivello</button>
+        <p id="out1"></p>
+   </div>
+
+   <div id="container2">
+        Inserisci gli orari e premi "calcola tempo di percorrenza"
+        <p><label for="orario_partenza">Orario di Partenza (HH:MM)</label></p>
+        <input id="orario_partenza" type="time">
+        <p><label for="orario_arrivo">Orario di Arrivo (HH:MM)</label></p>
+        <input id="orario_arrivo" type="time">
+        <p></p>
+        <button class="styled-button" onclick="calcolaTempo()">Calcola tempo di percorrenza</button>
+        <p id="out2"></p>
+   </div>
+
+   <script>
+    function calcola(){
+        let i1;
+        let i2;
+        let i3;
+        let risultato;
+        i1 = parseInt(document.getElementById("partenza").value);
+        i2 = parseInt(document.getElementById("merenda").value);
+        i3 = parseInt(document.getElementById("arrivo").value);
+        risultato = i3 - i1;
+        document.getElementById("out1").innerHTML = risultato;
+    }
+
+    function calcolaTempo(){
+        let orarioPartenza;
+        orarioPartenza = parseInt(document.getElementById("orario_partenza").value);
+
+        let orarioArrivo 
+        orarioArrivo = parseInt(document.getElementById("orario_arrivo").value);
+
+        let partenza = new Date("1970-01-01T" + orarioPartenza + "Z");
+        let arrivo = new Date("1970-01-01T" + orarioArrivo + "Z");
+        let tempoPercorrenza = (arrivo - partenza) / (1000 * 60);
+        document.getElementById("out2").innerHTML = "Tempo di percorrenza: " + tempoPercorrenza + " minuti";
+    }
+   </script>
+   
+</body>
+</html>
