@@ -5,15 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calcola il dislivello</title>
 <style>
-    #container1 {
+    #container1, #container2 {
+        display: inline-block;
+        vertical-align: top;
         padding: 20px;
         border: 1px solid black;
-        background-image: url(una\ montagna.png);
         background-size: cover;
         color: white;
         margin: 10px;
         height: 500px;
         width: 500px;
+    }
+
+    #container1 {
+        background-image: url(una\ montagna.png);
+    }
+
+    #container2 {
+        background-image: url(montagna\ 2.png);
+        color: black;
+        background-color: rgba(0, 0, 0, 0.5);
     }
 
     .styled-button {
@@ -32,18 +43,6 @@
 
     .styled-button:hover {
         background-color: #45a049; 
-    }
-
-    #container2 {
-        padding: 20px;
-        border: 1px solid black;
-        background-image: url(una/ montagna2.png);
-        backgroung-size: cover;
-        color: white;
-        margin: 10px;
-        height: 500px;
-        width: 500px;
-        background-color: rgba(0, 0, 0, 0.5);
     }
 </style>
 </head>
@@ -88,15 +87,31 @@
 
     function calcolaTempo(){
         let orarioPartenza;
-        orarioPartenza = parseInt(document.getElementById("orario_partenza").value);
+        let orarioArrivo;
+        let oraPartenza;
+        let minutoPartenza;
+        let oraArrivo;
+        let minutoArrivo;
+        let tempoPercorrenza;
 
-        let orarioArrivo 
-        orarioArrivo = parseInt(document.getElementById("orario_arrivo").value);
+        orarioPartenza = document.getElementById("orario_partenza").value;
+        orarioArrivo = document.getElementById("orario_arrivo").value;
 
-        let partenza = new Date("1970-01-01T" + orarioPartenza + "Z");
-        let arrivo = new Date("1970-01-01T" + orarioArrivo + "Z");
-        let tempoPercorrenza = (arrivo - partenza) / (1000 * 60);
+        [oraPartenza, minutoPartenza] = orarioPartenza.split(":").map(Number);
+        [oraArrivo, minutoArrivo] = orarioArrivo.split(":").map(Number);
+
+        tempoPercorrenza = calcolaDifferenza(oraPartenza, minutoPartenza, oraArrivo, minutoArrivo);
+
         document.getElementById("out2").innerHTML = "Tempo di percorrenza: " + tempoPercorrenza + " minuti";
+    }
+
+
+    function calcolaDifferenza(ora1, minuto1, ora2, minuto2) {
+        const minutiTotali1 = (ora1 * 60) + minuto1;
+        const minutiTotali2 = (ora2 * 60) + minuto2;
+        const differenza = minutiTotali2 - minutiTotali1;
+
+        return differenza;
     }
    </script>
    
