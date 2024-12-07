@@ -38,30 +38,26 @@
 
     function inputNumero(){
        let numero = prompt("Inserisci il numero");
-       numero=Number(numero);
+       numero = Number(numero);
 
-        else if (numero=1)
-        {alert("Lunedì")}
-
-        else if (numero=2)
-        {alert("Martedì")}
-
-        else if(numero=3)
-        {alert("Mercoledì")}
-
-        else if (numero=4)
-        {alert("Giovedì")}
-
-        else if (numero=5)
-        {alert("Venerdì")}
-
-        else if (numero=6)
-        {alert("Sabato")}
-
-        else if(numero=7)
-        {alert("Domenica")}
+        if (numero === 1) {
+            alert("Lunedì");
+        } else if (numero === 2) {
+            alert("Martedì");
+        } else if (numero === 3) {
+            alert("Mercoledì");
+        } else if (numero === 4) {
+            alert("Giovedì");
+        } else if (numero === 5) {
+            alert("Venerdì");
+        } else if (numero === 6) {
+            alert("Sabato");
+        } else if (numero === 7) {
+            alert("Domenica");
+        } else {
+            alert("Numero non valido. Inserisci un numero da 1 a 7.");
+        }
     }
-
 
 </script>
 
