@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verifica Lunghezza Input</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input {
+            margin: 10px 0;
+            padding: 8px;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h3>Verifica Lunghezza Input</h3>
+    <label for="input1">Input 1:</label>
+    <input type="text" id="input1" placeholder="Inserisci un valore">
+    <br>
+    <label for="input2">Input 2:</label>
+    <input type="text" id="input2" placeholder="Inserisci un valore">
+    <br>
+    
+    <button onclick="verificaLunghezzaInput()">Verifica</button>
+    <div id="output"></div>
+
+    <script>
+        function verificaLunghezzaInput() {
+            const input1 = document.getElementById("input1").value;
+            const input2 = document.getElementById("input2").value;
+
+            const input1Length = input1.length;
+            const input2Length = input2.length;
+            const isValid = input1Length > 8 && input2Length > 8;
+
+            const outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = "<h3>Risultati:</h3>";
+            outputDiv.innerHTML += `<p>Lunghezza Input 1: ${input1Length}</p>`;
+            outputDiv.innerHTML += `<p>Lunghezza Input 2: ${input2Length}</p>`;
+            outputDiv.innerHTML += `<p>Validità (> 8): ${isValid}</p>`;
+        }
+    </script>
+</body>
+</html>
