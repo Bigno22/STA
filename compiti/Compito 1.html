@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compito 1</title>
+    <title>Verifica Età</title>
     <style>
-        .miobotton1 {
+.miobotton1 {
             display: inline-block;
             padding: 15px 25px;
             font-size: 24px;
@@ -27,31 +27,40 @@
             box-shadow: 0 5px #666;
             transform: translateY(4px);
           }
+
+          /* Rimuove le freccette dagli input di tipo number */
+          input[type=number]::-webkit-outer-spin-button,
+          input[type=number]::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+          }
+
+          input[type=number] {
+              appearance: textfield;
+              -moz-appearance: textfield;
+          }
     </style>
 </head>
 <body>
-<h1><p>Inserisci la tua età e premi il pulsante qua sotto</p></h1>
-    </p>
-    <button class= "miobotton1" id="miobotton1" onclick="inputNumero()"></button>
+    <h1>Inserisci la tua età e premi il pulsante qua sotto</h1>
+    <input type="number" id="eta" placeholder="Inserisci la tua età"><br>
+    <p><button class="miobotton1" id="miobotton1" onclick="verificaEta()">Verifica Età</button></p>
+    <p id="output"></p>
 
-<script>
+    <script>
+        function verificaEta() {
+            let eta = document.getElementById("eta").value;
+            eta = Number(eta);
 
-    function inputNumero(){
-       let numero = prompt("Inserisci l'età");
-       numero = Number(numero);
-
-        if (numero >= 18) {
-            alert("Accedi al sistema");
-        } else if (numero < 18) {
-            let anniMancanti= 18 - numero;
-            alert("puoi accedere tra " + anniMancanti + "anni");
-        } else {
-            alert("Età non valida.");
+            if (eta >= 18) {
+                document.getElementById("output").innerText = "Accedi al sistema";
+            } else if (eta < 18) {
+                let anniMancanti = 18 - eta;
+                document.getElementById("output").innerText = "Puoi accedere al sistema tra " + anniMancanti + " anni";
+            } else {
+                document.getElementById("output").innerText = "Età non valida.";
+            }
         }
-    }
-
-</script>
-
+    </script>
 </body>
 </html>
-
