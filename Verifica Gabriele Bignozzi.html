@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolo Legge di Ohm</title>
+    <style>
+        .miobotton1 {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 24px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #04AA6D;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+        
+        .miobotton1:hover {background-color: #3e8e41}
+        
+        .miobotton1:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        
+        input[type=number]::-webkit-outer-spin-button,
+        input[type=number]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            appearance: textfield;
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcolo della variabile utilizzando la Legge di Ohm</h1>
+    <p>Inserisci il numero della formula da utilizzare:</p>
+    <p>1 V=I⋅R </p>   
+    <p>2 I=V/R​ </p> 
+    <p>3 R=V/I </p>
+    <input type="number" id="formula" placeholder="1, 2 o 3"><br>
+    <div id="valori">
+        <p>Inserisci i valori per il calcolo:</p>
+        <input type="number" id="valore1" placeholder="I o R o V"><br>
+        <input type="number" id="valore2" placeholder="R o V o I"><br>
+    </div>
+    <p><button class="miobotton1" id="miobotton1" onclick="calcola()">Calcola</button></p>
+    <p id="output"></p>
+
+    <script>
+        function calcola() {
+            let formula = document.getElementById("formula").value;
+            let valore1 = document.getElementById("valore1").value;
+            let valore2 = document.getElementById("valore2").value;
+            let risultato;
+
+            if (formula == 1) {
+                risultato = valore1 * valore2; 
+                document.getElementById("output").innerText = "Il voltaggio (V) è " + risultato + " Volt.";
+            } else if (formula == 2) {
+                risultato = valore1 / valore2; 
+                document.getElementById("output").innerText = "L'intensità di corrente (I) è " + risultato + " Ampere.";
+            } else if (formula == 3) {
+                risultato = valore1 / valore2; 
+                document.getElementById("output").innerText = "La resistenza (R) è " + risultato + " Ohm.";
+            } else {
+                document.getElementById("output").innerText = "Formula non specificata. Inserisci la formula 1, 2 o 3.";
+            }
+        }
+    </script>
+</body>
+</html>
