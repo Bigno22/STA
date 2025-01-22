@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina web Legge di Ohm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .concept-map img {
+            width: 85%;
+            height: 600px; 
+        }
+        .calculator {
+            border-top: 2px solid #333;
+            padding-top: 20px;
+        }
+        .biography {
+            margin-top: 20px;
+        }
+        .OHM {
+            width: 500px;
+            height: 500px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prima Legge di Ohm</h1>
+        <p>La legge di Ohm afferma che la corrente che scorre attraverso un conduttore tra due punti è direttamente proporzionale alla tensione presente ai due estremi e inversamente proporzionale alla resistenza. La formula è: V = I * R.</p>
+        
+        <h2>Mappa Concettuale</h2>
+        <div class="concept-map">
+            <img src="Legge di OHM.png" alt="Mappa Concettuale della Legge di Ohm">
+        </div>
+
+        <h2>Riassunto dei Concetti</h2>
+        <ul>
+            <li>La corrente è proporzionale alla tensione.</li>
+            <li>La resistenza oppone il flusso di corrente.</li>
+            <li>La formula della legge di Ohm è V = I * R.</li>
+            <li>La legge di Ohm è fondamentale per l'elettrotecnica.</li>
+            <li>È utilizzata per calcolare tensione, corrente e resistenza.</li>
+        </ul>
+
+        <h2>Calcolatrice della Legge di Ohm</h2>
+        <p>Calcolo della variabile utilizzando la Legge di Ohm</p>
+        <p>Inserisci il numero della formula da utilizzare:</p>
+        <p>1 V=I⋅R </p>   
+        <p>2 I=V/R​ </p> 
+        <p>3 R=V/I </p>
+        <input type="number" id="formula" placeholder="1, 2 o 3"><br>
+        <div id="valori">
+            <p>Inserisci i valori per il calcolo:</p>
+            <input type="number" id="valore1" placeholder="I o R o V"><br>
+            <input type="number" id="valore2" placeholder="R o V o I"><br>
+        </div>
+        <p><button class="miobotton1" id="miobotton1" onclick="calcola()">Calcola</button></p>
+        <p id="output"></p>
+
+        <h2>Biografia di Georg Simon Ohm</h2>
+        <div class="biography">
+            <p>Georg Simon Ohm (1789-1854) è stato un fisico e matematico tedesco. È noto soprattutto per aver formulato la legge di Ohm, che descrive la relazione tra tensione, corrente e resistenza in un circuito elettrico. La sua opera principale, 'Die galvanische Kette, mathematisch bearbeitet', è stata pubblicata nel 1827.</p>
+            <img src="Georg_Simon_Ohm_(1789-1854).jpg" alt="Foto di Georg Simon Ohm" class="OHM">
+        </div>
+    </div>
+    <script>
+         function calcola() {
+            let formula = document.getElementById("formula").value;
+            let valore1 = document.getElementById("valore1").value;
+            let valore2 = document.getElementById("valore2").value;
+            let risultato;
+
+            if (formula == 1) {
+                risultato = valore1 * valore2; 
+                document.getElementById("output").innerText = "Il voltaggio (V) è " + risultato + " Volt.";
+            } else if (formula == 2) {
+                risultato = valore1 / valore2; 
+                document.getElementById("output").innerText = "L'intensità di corrente (I) è " + risultato + " Ampere.";
+            } else if (formula == 3) {
+                risultato = valore1 / valore2; 
+                document.getElementById("output").innerText = "La resistenza (R) è " + risultato + " Ohm.";
+            } else {
+                document.getElementById("output").innerText = "Formula non specificata. Inserisci la formula 1, 2 o 3.";
+            }
+        }
+    </script>
+    </script>
+</body>
+</html>
