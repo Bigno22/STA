@@ -58,6 +58,7 @@
             font-weight: bold; 
             margin-top: 10px;
         }
+    
     </style>
 </head>
 <body>
@@ -67,7 +68,7 @@
         
         <h2>Mappa Concettuale</h2>
         <div class="concept-map">
-            <img src="Legge di OHM.png" alt="Mappa Concettuale della Legge di Ohm">
+            <img src="legge .png" alt="Mappa Concettuale della Legge di Ohm">
         </div>
 
         <h2>Riassunto dei Concetti</h2>
@@ -79,17 +80,16 @@
             <li>È utilizzata per calcolare tensione, corrente e resistenza.</li>
         </ul>
 
-        <h2>Calcolatrice della Legge di Ohm</h2>
-        <p>Calcolo della variabile utilizzando la Legge di Ohm</p>
+        <h2>Calcolatore della Legge di Ohm</h2>
         <p>Inserisci il numero della formula da utilizzare:</p>
         <p>1 V = I ⋅ R</p>   
         <p>2 I = V / R​</p> 
         <p>3 R = V / I</p>
-        <input type="number" id="formula" placeholder="1, 2 o 3"><br>
+        <input id="formula" placeholder="1, 2 o 3"><br>
         <div id="valori">
             <p>Inserisci i valori per il calcolo:</p>
-            <input type="number" id="valore1" placeholder="I o R o V"><br>
-            <input type="number" id="valore2" placeholder="R o V o I"><br>
+            <input id="valore1" placeholder="I o R o V"><br>
+            <input id="valore2" placeholder="R o V o I"><br>
         </div>
         <p><button class="miobotton1" id="miobotton1" onclick="calcola()">Calcola</button></p>
         <p id="output"></p>
@@ -99,7 +99,15 @@
             <p>Georg Simon Ohm (1789-1854) è stato un fisico e matematico tedesco. È noto soprattutto per aver formulato la legge di Ohm, che descrive la relazione tra tensione, corrente e resistenza in un circuito elettrico. La sua opera principale, 'Die galvanische Kette, mathematisch bearbeitet', è stata pubblicata nel 1827.</p>
             <img src="Georg_Simon_Ohm_(1789-1854).jpg" alt="Foto di Georg Simon Ohm" class="OHM">
         </div>
+        <h3>Video spiegazione</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/4YlCsEnm4E0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/QHifiMuHFBg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h4>Sitografia</h4>
+        <ul>
+            <li><a href="https://it.wikipedia.org/wiki/Georg_Simon_Ohm">Wikipedia - Georg Simon Ohm</a></li>
+            <li><a href="https://it.wikipedia.org/wiki/Legge_di_Ohm">Wikipedia - Legge di Ohm</a></li>
     </div>
+
     <script>
          function calcola() {
             let formula = document.getElementById("formula").value;
@@ -120,7 +128,6 @@
                 document.getElementById("output").innerText = "Formula non specificata. Inserisci la formula 1, 2 o 3.";
             }
         }
-    </script>
     </script>
 </body>
 </html>
