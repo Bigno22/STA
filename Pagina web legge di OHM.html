@@ -10,30 +10,53 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            background-color: #f9f9f9; 
         }
         .container {
             width: 80%;
             margin: auto;
             overflow: hidden;
             padding: 20px;
+            background: #fff; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
         }
         h1, h2, h3 {
             color: #333;
         }
+        h1 {
+            border-bottom: 2px solid #333; 
+            padding-bottom: 10px;
+        }
         .concept-map img {
-            width: 85%;
-            height: 600px; 
+            width: 100%; 
+            height: auto; 
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style: disc inside; 
         }
         .calculator {
             border-top: 2px solid #333;
             padding-top: 20px;
+            margin-top: 20px;
         }
         .biography {
             margin-top: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .biography img {
+            margin-left: 20px;
+            border-radius: 50%; 
+            width: 150px; 
+            height: auto; 
         }
         .OHM {
-            width: 500px;
-            height: 500px; 
+            max-width: 100%; 
+        }
+        #output {
+            font-weight: bold; 
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -59,9 +82,9 @@
         <h2>Calcolatrice della Legge di Ohm</h2>
         <p>Calcolo della variabile utilizzando la Legge di Ohm</p>
         <p>Inserisci il numero della formula da utilizzare:</p>
-        <p>1 V=I⋅R </p>   
-        <p>2 I=V/R​ </p> 
-        <p>3 R=V/I </p>
+        <p>1 V = I ⋅ R</p>   
+        <p>2 I = V / R​</p> 
+        <p>3 R = V / I</p>
         <input type="number" id="formula" placeholder="1, 2 o 3"><br>
         <div id="valori">
             <p>Inserisci i valori per il calcolo:</p>
