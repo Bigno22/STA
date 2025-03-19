@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>
+        Calcolo Conduttore-Semiconduttore-Isolante
+    </h1>
+    <div>
+        <p>
+            Teoria: per determinare se un elemento è un Conduttore-Semiconduttore-Isolante
+            a partire dal numero atomico, devi considerare la struttura elettronica dell'elemento 
+            e il suo posizionamento nella tavola periodica.
+        </p>
+        <p>
+            <h1>1. Identificare il gruppo e il periodo nella tavola periodica</h1>
+            <ul>
+                <li>Gli elementi (gruppi 1.12 e alcuni del gruppo 13-16) sono in genere buoni conduttori.</li>
+                <li>Inon metalli ( gruppi 14-18) tendono ad essere isolanti. </li>
+                <li>I semi metalli (metalloidi) spesso sono semiconduttori.</li>
+            </ul>
+        <h1>2. Considerare la configurazione elettronica</h1>
+        <ul>
+            <li>Gli elementi con pochi elettroni di valenza (1-3) tendono a essere buoni conduttori perchè gli 
+                elettroni sono liberi di muoversi (es. Rame, Argento, Alluminio).
+            </li>
+            <li>Gli elementi con 4 elettroni di valenza (es. Silicio e Germanio) sono semiconduttori 
+                perchè il legame covalente limita il movimento degli elettroni a temperatura ambiente.
+            </li>
+            <li>Gli elemnticon molti elettroni di valenza (5-8) sono isolanti, perchè i loro
+                elettroni sono fortemente legati al nucleo. </li>
+        </ul>
+        <h1>3. Analizzare La Banda di conduzione e la banda proibita.</h1>
+        <ul>
+            <li>Conduttori: gli elettroni possono muoversi facilmente perchè la banda di conduzione 
+                è sovrapposta alla banda di valenza (es. metalli)
+            </li>
+            <li>SemiConduttori: hanno una piccola banda proibita (0.1 - 3 eV), quindi possono 
+                condurre elettricità in certe condizioni.
+            </li>
+            <li>Isolanti: hanno una banda proibita molto ampia (> 3 eV), quindi non conducono eletricità </li>
+        </ul>
+
+
+        <p>
+            <h1>Conclusione</h1>
+            <ul>
+                <li>Se il numero atomico induica un metallo, é probabilmente unconduttore</li>
+                <li>Se è un semimetallo indicA un semiconduttore (es. Silicio, Germanio)</li>
+                <li>Se è un non metallo è probabilmente unisolante</li>
+            </ul>
+        </p>
+        </p>
+
+<p>
+    Prompt di approfondimento: spiegami che cos'è la banda proibita, la banda di valenza e la banda di conduzione
+</p>
+
+    </div>
+</body>
+</html>
