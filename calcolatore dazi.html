@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Calcolatore Dazi di Esportazione</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f0f4f8;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: auto;
+    }
+    input {
+      margin: 10px 0;
+      padding: 8px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Calcolatore Finanziario - Dazi di Esportazione</h1>
+    <p>Un <strong>dazio</strong> è una tassa applicata sulle merci che vengono importate o esportate da un paese. Serve a proteggere l'economia nazionale e regolare il commercio internazionale.</p>
+
+    <!-- Tabella dei Dazi di esempio -->
+    <h3>Dazi per Paese</h3>
+<table>
+  <tr><th>Paese</th><th>Dazio medio (%)</th></tr>
+  <tr><td>Italia</td><td>2%</td></tr>
+  <tr><td>Stati Uniti</td><td>3%</td></tr>
+  <tr><td>Canada</td><td>2.5%</td></tr>
+  <tr><td>Unione Europea</td><td>2%</td></tr>
+  <tr><td>Cina</td><td>5%</td></tr>
+  <tr><td>Brasile</td><td>8%</td></tr>
+  <tr><td>India</td><td>10%</td></tr>
+  <tr><td>Australia</td><td>1.5%</td></tr>
+  <tr><td>Giappone</td><td>2.2%</td></tr>
+  <tr><td>Messico</td><td>4%</td></tr>
+  <tr><td>Sud Africa</td><td>6%</td></tr>
+</table>
+
+    <!-- Calcolatore -->
+    <h3>Calcolatore</h3>
+    <!-- Input: Costo -->
+    <input type="number" id="costo" placeholder="Costo (€)">
+    <!-- Input: Ricarico -->
+    <input type="number" id="ricarico" placeholder="Ricarico (€)">
+    <!-- Input: Percentuale da applicare (default 20%) -->
+    <input type="number" id="percentuale" placeholder="Percentuale (%)" value="20">
+    <!-- Input: Risultato finale della percentuale -->
+    <input type="text" id="valorePercentuale" placeholder="Risultato della percentuale" readonly>
+
+    <!-- Bottone per calcolare valore totale esportazione -->
+    <button onclick="calcolaSomma()">Calcola Valore Esportazione</button>
+    <!-- Bottone per calcolare la percentuale -->
+    <button onclick="calcolaPercentuale()">Calcola Percentuale</button>
+
+    <!-- Spazio per mostrare risultati finali -->
+    <div id="risultati"></div>
+  </div>
+
+  <script>
+   
+
+    // Funzione per sommare costo e ricarico
+    function calcolaSomma() {
+      // Otteniamo i valori dagli input
+      const costo = parseInt(document.getElementById('costo').value);
+      const ricarico = parseInt(document.getElementById('ricarico').value);
+
+      // Sommiamo i due valori
+      somma = costo + ricarico;
+
+      // Mostriamo il totale
+      alert('Valore totale esportazione: €' + somma);
+    }
+
+    // Funzione per calcolare la percentuale e i risultati
+    function calcolaPercentuale() {
+      // Otteniamo il valore della percentuale
+      const perc = parseInt(document.getElementById('percentuale').value);
+
+      // Calcoliamo la percentuale sulla somma ottenuta prima
+      const valore = somma * (perc / 100);
+
+      // Mostriamo il valore nel campo dedicato
+      document.getElementById('valorePercentuale').value = valore.toFixed(2) + ' €';
+
+      // Calcoliamo il dazio (valore stesso in percentuale)
+      const dazioPercentuale = perc; // consideriamo che il valore stesso è il dazio per semplicità
+
+      // Calcoliamo la conversione in dollari
+      const valoreInDollari = valore * 1.1;
+
+      // Mostriamo tutto
+      document.getElementById('risultati').innerHTML = `
+        <p><strong>Dazio applicato:</strong> ${dazioPercentuale}%</p>
+        <p><strong>Valore in Dollari ($):</strong> ${valoreInDollari.toFixed(2)}</p>
+      `;
+    }
+  </script>
+</body>
+</html>
