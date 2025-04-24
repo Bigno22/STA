@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Tempi di reazione.</title>
+    <style>
+        .contenitore{
+            display: flex;
+            margin-top: 50px;
+            justify-content: center;
+            gap: 10px;
+        }
+        .color-button{
+            width: 100px;
+            height: 100px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+        }
+        #titolo-Game{
+            color:blue;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="titolo-Game"> Clicca sul bottone rosso </div>
+    <div class="contenitore">
+    <button id="btn1" class="color-button"></button>
+    <button id="btn2" class="color-button"></button>
+    <button id="btn3" class="color-button"></button>
+    <button id="btn4" class="color-button"></button>
+    </div>
+
+    <script>
+        const colore=["blue","red","green","yellow"];
+        let TempoDelRosso=null;
+
+        function CambiaColori(){
+            let casuale=Math.floor((Math.random()*4));
+           
+            document.getElementById("btn1").style.backgroundColor=colore[casuale];
+            casuale=Math.floor((Math.random()*4));
+            document.getElementById("btn2").style.backgroundColor=colore[casuale];
+            casuale=Math.floor((Math.random()*4));
+            document.getElementById("btn3").style.backgroundColor=colore[casuale];
+            casuale=Math.floor((Math.random()*4));
+            document.getElementById("btn4").style.backgroundColor=colore[casuale];
+            casuale=Math.floor((Math.random()*4));
+
+            if(casuale==1)
+            {   TempoDelRosso=Date.now();
+                console.log(TempoDelRosso)
+
+            }
+
+        }
+        setInterval(CambiaColori,1000);
+     
+    </script>
+</body>
+</html>
